@@ -1,39 +1,53 @@
-from matplotlib import pyplot as plt
+Median Salary by Age: Python vs JavaScript Developers
+This project analyzes the median salaries of Python developers, JavaScript developers, and all developers across different ages, using data visualization. The goal is to compare salary trends and see how different programming languages impact earnings as developers progress in their careers.
 
-# Enable fivethirtyeight style
-plt.style.use('fivethirtyeight')
+Project Overview
+In this project, a line graph is created using the matplotlib library to visualize the median salary (in USD) of developers based on their age. The data includes salary information for:
 
-# Data
-ages_x = [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
-          36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55]
+Python Developers
+JavaScript Developers
+All Developers
+The graph displays how the median salary changes with age and how the salaries of Python and JavaScript developers compare to those of all developers.
 
-py_dev_y = [20046, 17100, 20000, 24744, 30500, 37732, 41247, 45372, 48876, 53850, 57287, 63016, 65998, 70003, 70000, 71496, 75370, 83640, 84666,
-            84392, 78254, 85000, 87038, 91991, 100000, 94796, 97962, 93302, 99240, 102736, 112285, 100771, 104708, 108423, 101407, 112542, 122870, 120000]
+Features
+Visualizes median salaries of developers based on age.
+Compares salary trends for Python and JavaScript developers.
+Uses Python and matplotlib to generate a line graph for easy comparison.
+Saves the plot as a PNG image (plot.png).
+Installation
+Clone this repository:
 
-js_dev_y = [16446, 16791, 18942, 21780, 25704, 29000, 34372, 37810, 43515, 46823, 49293, 53437, 56373, 62375, 66674, 68745, 68746, 74583, 79000,
-            78508, 79996, 80403, 83820, 88833, 91660, 87892, 96243, 90000, 99313, 91660, 102264, 100000, 100000, 91660, 99240, 108000, 105000, 104000]
+bash
+Copy code
+git clone https://github.com/YOUR_USERNAME/median-salary-by-age.git
+cd median-salary-by-age
+Install the required Python libraries:
 
-dev_y = [17784, 16500, 18012, 20628, 25206, 30252, 34368, 38496, 42000, 46752, 49320, 53200, 56000, 62316, 64928, 67317, 68748, 73752, 77232,
-         78000, 78508, 79536, 82488, 88935, 90000, 90056, 95000, 90000, 91633, 91660, 98150, 98964, 100000, 98988, 100000, 108923, 105000, 103117]
+bash
+Copy code
+pip install matplotlib
+Usage
+Run the script:
 
-# Plotting
-plt.plot(ages_x, py_dev_y, label='Python')
-plt.plot(ages_x, js_dev_y, label='JavaScript')
-plt.plot(ages_x, dev_y, color='#444444', linestyle='--', label='All Devs')
+bash
+Copy code
+python plot_salary_by_age.py
+The script will generate a plot and display it using matplotlib. It will also save the plot as plot.png in the current directory.
 
-# Adding labels and title
-plt.xlabel('Ages')
-plt.ylabel('Median Salary (USD)')
-plt.title('Median Salary (USD) by Age')
+Example Output
+The graph will display the following:
 
-# Adding legend
-plt.legend()
+X-axis: Age of developers (18-55).
+Y-axis: Median salary in USD.
+Line 1: Median salary of Python developers.
+Line 2: Median salary of JavaScript developers.
+Line 3: Median salary of all developers (shown in dashed line).
+Code Explanation
+Data Arrays: The project includes three lists (py_dev_y, js_dev_y, dev_y), which contain the median salary data for Python, JavaScript, and all developers respectively.
+Plotting: matplotlib is used to plot the data, adding labels, titles, and a legend for clarity.
+Contributing
+If you would like to contribute to this project, feel free to fork the repository and create a pull request. For any issues, please open an issue on GitHub.
 
-# Adjust layout
-plt.tight_layout()
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-# Save the plot
-plt.savefig('plot.png')
-
-# Show the plot
-plt.show()
